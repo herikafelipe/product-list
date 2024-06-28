@@ -1,2 +1,4 @@
-# lista-de-produtos
-Projeto de um formulário de cadastro de produtos para uma lista
+# Lista de produtos
+Projeto de uma lista de produtos com formulário de cadastro para novos produtos.
+
+Link do projeto em: https://herikafelipe.github.io/product-list/ 
