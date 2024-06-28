@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+
+    <div class="wrapper px-5 pt-4 container-fluid">
+
+        <!-- Header -->
+        <header class="r-box mx-3 mb-5">
+            <h2 class="fs-4 p-3 m-0">Controle de Produtos</h2>
+        </header>
+
+        <div class="row d-flex justify-content-around">
+
+            <!-- Coluna de cadastro -->
+            <div class="col-4 form-add r-box p-4">
+                <form id="form-add">
+                    <input type="hidden" name="id" value="">
+                    <h3 class="fs-4 mt-3">Cadastro de Produto</h3>
+                    <div class="pt-3">
+                        <label for="product-name" class="p-1">Nome do produto</label>
+                        <input id="product-name" type="text" placeholder="Nome do produto" class="form-control form-control-sm" name="product_name">
+                    </div>
+                    <div class="pt-3">
+                        <label for="product-description" class="p-1">Descrição do produto</label>
+                        <input id="product-description" type="text" placeholder="Descrição do produto" class="form-control form-control-sm" name="product_description">
+                    </div>
+                    <div class="py-3 row d-flex justify-content-between">
+                        <div class="col-6">
+                            <label for="product-price" class="p-1">Valor do produto</label>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text">$</span>
+                                <input id="product-price" type="number" placeholder="Valor do produto" class="form-control form-control-sm" name="product_price">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="available" class="p-1">Produto disponível</label>
+                            <select name="available" id="available" class="form-select form-select-sm">
+                                <option selected>Selecione</option>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </div>
+                        <div class="pt-5">
+                            <button onclick="create()" type="button" id="btn-add" class="w-100  btn btn-success">Cadastar</button>
+                            <button onclick="edit()" type="button" id="btn-update" class="w-100 btn btn-primary d-none">Editar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Coluna da lista de produtos -->
+            <div class="col-7 list r-box p-4">
+                <div class="container p-0 b-0">
+                    <h3 class="fs-4 my-3">Lista de Produtos</h3>
+
+                    <!-- Pesquisa -->
+                    <form id="form-search">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control"  placeholder="Buscar item">
+                            <button type="button" onclick="searchWord()" class="btn btn-success">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Tabela -->
+                    <table id="list-products" class="table mt-3 sortable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Produto</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                                <th>Disponível</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <p>* Clique na coluna que deseja ordenar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
