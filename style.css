@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --b-radius: 15px;
+}
+
+.wrapper{
+    background-color: rgb(200, 233, 222);
+    height: 100vh;
+    font-family: Calibri;
+}
+
+.r-box{
+    border: 0 solid white;
+    border-radius: var(--b-radius);
+    background-color: white;
+}
